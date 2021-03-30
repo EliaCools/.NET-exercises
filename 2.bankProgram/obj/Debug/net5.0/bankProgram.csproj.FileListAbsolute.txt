@@ -1,0 +1,16 @@
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/bin/Debug/net5.0/bankProgram
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/bin/Debug/net5.0/bankProgram.deps.json
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/bin/Debug/net5.0/bankProgram.runtimeconfig.json
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/bin/Debug/net5.0/bankProgram.runtimeconfig.dev.json
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/bin/Debug/net5.0/bankProgram.dll
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/bin/Debug/net5.0/ref/bankProgram.dll
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/bin/Debug/net5.0/bankProgram.pdb
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/obj/Debug/net5.0/bankProgram.csprojAssemblyReference.cache
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/obj/Debug/net5.0/bankProgram.GeneratedMSBuildEditorConfig.editorconfig
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/obj/Debug/net5.0/bankProgram.AssemblyInfoInputs.cache
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/obj/Debug/net5.0/bankProgram.AssemblyInfo.cs
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/obj/Debug/net5.0/bankProgram.csproj.CoreCompileInputs.cache
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/obj/Debug/net5.0/bankProgram.dll
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/obj/Debug/net5.0/ref/bankProgram.dll
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/obj/Debug/net5.0/bankProgram.pdb
+/home/elia/becode-repositories/dotnet/dotnet-exercises/bankProgram/obj/Debug/net5.0/bankProgram.genruntimeconfig.cache
