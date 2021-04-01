@@ -1,0 +1,27 @@
+﻿
+@page
+@using Microsoft.Extensions.WebEncoders.Testing
+@using firstpage.Models
+@model firstpage.Pages.StudentModel  
+@{
+}
+
+<table class = "table">
+ <thead>
+ <tr>
+  <th> Student Id</th>
+  <th> Student name</th>
+  <th> classId </th>
+ </tr>
+ </thead>  
+  <tbody>
+ @foreach ( var student in  Model.AllStudents)
+{
+ <tr>
+    <td>@student.id</td>
+    <td>@student.name</td>
+    <td>@student.classId</td>
+</tr>
+}
+</tbody>
+</table>

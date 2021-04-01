@@ -1,0 +1,28 @@
+﻿@page
+@using firstpage.Models
+@model firstpage.Pages.TeachersModel
+@{
+}
+
+
+<table class = "table">
+    <thead>
+    <tr>
+        <th> Teacher Id</th>
+        <th> Teacher name</th>
+        <th> Teacher classId</th>
+    </tr>
+    </thead>  
+    <tbody>
+    @foreach ( var teacher in  Model.AllTeachers)
+    {
+        <tr>
+            <td>@teacher.Id</td>
+            <td>@teacher.Name</td>
+            <td>@teacher.ClassId</td>
+        </tr>
+    }
+    
+    
+    </tbody>
+</table>

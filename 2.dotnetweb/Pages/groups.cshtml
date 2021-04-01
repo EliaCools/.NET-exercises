@@ -1,0 +1,23 @@
+﻿@page
+@model firstpage.Pages.groupsModel
+@{
+}
+
+
+<table class = "table">
+    <thead>
+    <tr>
+        <th> Class Id</th>
+        <th> Class name</th>
+    </tr>
+    </thead>  
+    <tbody>
+    @foreach ( var group in  Model.AllGroups)
+    {
+        <tr>
+            <td>@group.GroupId</td>
+            <td>@group.GroupName</td>
+        </tr>
+    }
+    </tbody>
+</table>
