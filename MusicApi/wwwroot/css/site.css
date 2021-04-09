@@ -22,18 +22,37 @@ th {
     padding: 5px;
 }
 
+body{
+    margin:0 auto;
+    padding:20px 100px 0 100px;
+}
+
 td {
     border: 1px solid;
     padding: 5px;
 }
 
 .button{
-    background-color:grey;
-    height:100px;
+    background-color:cadetblue;
+    height:50px;
     width:100px;
+    border-radius:10px;
+    text-align:center;
     
+    
+    box-sizing:border-box;
+    display: inline-block;
 }
 
-#add-artist{
+#add-artist-name{
     display: none;
 }
+#edit-artist-name{
+    display: none;
+}
+
+#edit-country{
+    display: none;
+}
+
+

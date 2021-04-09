@@ -1,17 +1,16 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using Newtonsoft.Json;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace TodoApi.Models
 {
-    public class Album
+    public class Artist
     {
         public long Id { get; set; }
-    
+        
         public string Name { get; set; }
         
-        public string Artist{ get; set; }
-        
+        public string Country { get; set; }
         
     }
 }

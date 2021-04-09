@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QaE8Abe240hJk2rg09p3gXAVxbIdSkqVCycfB0UQC0SmY1JjMuO17sc3+rcjAJw9QSGVBBXTVIzVmYd4iiUbQA==",
+  "dgSpecHash": "aKu6ErlK27VaFaTmSszsk6m8fDE2bEjU5Kb8vxKp30DFYuOjL7eSVVxgLkEdL9aC2AFFt3jM81VhBjFJ9wmJIQ==",
   "success": true,
   "projectFilePath": "/home/elia/becode-repositories/dotnet/dotnet-exercises/MusicApi/MusicApi.csproj",
   "expectedPackageFiles": [

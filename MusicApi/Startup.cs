@@ -40,6 +40,9 @@ namespace Todoapi
             services.AddDbContext<AlbumContext>(opt =>
                 opt.UseSqlite(Configuration.GetConnectionString("AlbumContext")));
             
+            services.AddDbContext<ArtistContext>(opt =>
+                opt.UseSqlite(Configuration.GetConnectionString("ArtistContext")));
+            
             
         }
 

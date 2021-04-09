@@ -7,17 +7,25 @@
 </head>
 <body>
 
-<div class="button" id="to-do" > to-dos </div>
-<div class="button" id="album" > albums</div>
+<div>
+<div class="button" id="artist" > <p> Artists</p>  </div>
+<div class="button" id="album" > <p> Albums</p></div>
+</div>
 
-
-<h1>To-do CRUD</h1>
-<div class="hide" id="todo-page">
-<h3>Add</h3>
+<h1>Music Crud</h1>
+<div class="hide" id="crud-page">
+<h3 id="add"></h3>
 <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-    <input type="text" id="add-artist" placeholder="New to-do">
-    <input type="text" id="add-name" placeholder="New to-do">
-   
+    
+    <input type="text" id="add-name" placeholder="Name">
+    
+    <!--  for adding album -->
+    <input type="text" id="add-artist-name" placeholder="Artist name">
+
+    <!--  for adding artist -->
+    <input type="text" id="add-country" placeholder="Country of origin">
+    
+    
     <input type="submit" value="Add">
 </form>
 
@@ -25,8 +33,13 @@
     <h3>Edit</h3>
     <form action="javascript:void(0);" onsubmit="updateItem()">
         <input type="hidden" id="edit-id">
-        <input type="checkbox" id="edit-isComplete">
+
         <input type="text" id="edit-name">
+        
+        <input type="text" id="edit-artist-name">
+        
+        <input type="text" id="edit-country">
+        
         <input type="submit" value="Save">
         <a onclick="closeInput()" aria-label="Close">&#10006;</a>
     </form>
