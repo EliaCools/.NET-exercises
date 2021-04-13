@@ -19,7 +19,7 @@ namespace TodoApi.Models
         [DataType(DataType.Date)]
         [Required]
         
-        public DateTime Birthdate { get; set; }
+        public DateTime Debutdate { get; set; }
         
 
         

@@ -35,13 +35,21 @@
 <div id="editForm">
     <h3>Edit</h3>
     <form action="javascript:void(0);" onsubmit="updateItem()">
+        
         <input type="hidden" id="edit-id">
 
+        <!-- for editing Artist name or Album name (both fetches) -->
         <input type="text" id="edit-name">
         
+        <!-- for album fetch -->
         <input type="text" id="edit-artist-name">
+        <input type="text" id="edit-Release-date">
         
+        <!-- for artist fetch -->
         <input type="text" id="edit-country">
+        <input type="text" id="edit-birthdate">
+        
+        
         
         <input type="submit" value="Save">
         <a onclick="closeInput()" aria-label="Close">&#10006;</a>
@@ -68,6 +76,7 @@
 
 </div>
 
+<script src="js/utils.js"></script>
 <script src="js/site.js" asp-append-version="true"></script>
 <script type="text/javascript">
     

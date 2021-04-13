@@ -1,7 +1,7 @@
 
 
 var uri;
-let todos = [];
+let rows = [];
 
 chooseTopic();
 
@@ -12,27 +12,18 @@ function chooseTopic(){
         pressedButton.addEventListener("click",function(){
             
             if(pressedButton.getAttribute("id") === "album"){
-                uri = 'api/Albums';
-
-                document.getElementById("add").innerText= "Add Album";
                 
-                document.getElementById("add-artist-name").style.display="inline-block";
-                document.getElementById("add-country").style.display="none";
-                document.getElementById("add-birthdate").style.display="none";
-                document.getElementById("add-ReleaseDate").style.display="inline-block";
+                uri = 'api/Albums';
+                
+                showAddAlbum();
                
             }
             if(pressedButton.getAttribute("id") === "artist"){
+                
                 uri = 'api/Artist';
                 
-                document.getElementById("add").innerText= "Add Artist";
-                
-                document.getElementById("add-country").style.display="inline-block";
-                document.getElementById("add-artist-name").style.display="none";
-                document.getElementById("add-ReleaseDate").style.display="none";
-                document.getElementById("add-birthdate").style.display="inline-block";
-
-
+                showAddArtist();
+             
             }
             
             document.getElementById("crud-page").style.display="block";
@@ -70,7 +61,7 @@ function addItem() {
         
         Name: addNameTextBox.value.trim(),
         Country: addCountryTextBox.value.trim(),
-        birthDate: addBirthdateTextBox.value.trim()
+        debutDate: addBirthdateTextBox.value.trim()
      
     };
     }
@@ -100,7 +91,7 @@ function addItem() {
         .catch(error => console.error('Unable to add item.', error));
 }
 
-// can reuse
+
 function deleteItem(id) {
     fetch(`${uri}/${id}`, {
         method: 'DELETE'
@@ -110,26 +101,44 @@ function deleteItem(id) {
 }
 
 function displayEditForm(id) {
-    const item = todos.find(item => item.id === id);
+    const item = rows.find(item => item.id === id);
     
+    // artist name Or album name and Id  (both fetches)
     document.getElementById('edit-name').value = item.name;
-
-    
-    document.getElementById('edit-artist-name').value = item.artistName
-    document.getElementById('edit-country').value = item.country
-    
-    
     document.getElementById('edit-id').value = item.id;
+    
+    //For album fetch
+    document.getElementById('edit-artist-name').value = item.artistName
+    document.getElementById('edit-Release-date').value = item.releaseDate;
+    
+    //for Artist fetch
+    document.getElementById('edit-country').value = item.country
+    document.getElementById('edit-birthdate').value = item.debutdate
+    
+    
+ 
 
     if(uri === "api/Artist") {
+        
+    // displaying artist related edit fields    
     document.getElementById('edit-country').style.display = "inline-block"
+    document.getElementById('edit-birthdate').style.display = "inline-block"
+        
+    // hiding unrelated fields    
     document.getElementById('edit-artist-name').style.display = "none"
-    }
-    if(uri === "api/Albums") {
-    document.getElementById('edit-artist-name').style.display = "inline-block"
-    document.getElementById('edit-country').style.display = "none"
+    document.getElementById('edit-Release-date').style.display = "none"
     }
     
+    if(uri === "api/Albums") {
+        
+    // displaying album related edit fields   
+    document.getElementById('edit-artist-name').style.display = "inline-block"
+    document.getElementById('edit-Release-date').style.display = "inline-block"
+        
+    // hiding unrelated fields   
+    document.getElementById('edit-country').style.display = "none"
+    document.getElementById('edit-birthdate').style.display = "none"
+    }
     
     document.getElementById('editForm').style.display = 'block';
 }
@@ -141,15 +150,16 @@ function updateItem() {
         item = {
             id: parseInt(itemId, 10),
             name: document.getElementById('edit-name').value.trim(),
-            artist:document.getElementById('edit-artist').value.trim()
-            
+            artist:document.getElementById('edit-artist').value.trim(),
+            debutDate: document.getElementById('edit-birthdate').value.trim()
         }; 
     }
     if(uri === "api/Albums"){
         item = {
             id: parseInt(itemId, 10),
             name:document.getElementById('edit-artist').value.trim(),
-            country: document.getElementById('edit-name').value.trim()
+            country: document.getElementById('edit-name').value.trim(),
+            releaseDate: document.getElementById('edit-Release-date').value.trim()
         }; 
     }
 
@@ -197,15 +207,15 @@ function _displayItems(data) {
     const button = document.createElement('button');
 
     if(uri === 'api/Artist'){
-        document.getElementById("1").innerText = "artist"
-        document.getElementById("2").innerText = "country"
-        document.getElementById("3").innerText = "birthdate"
+        document.getElementById("1").innerText = "Artist"
+        document.getElementById("2").innerText = "Country"
+        document.getElementById("3").innerText = "Debut Date"
     }
     
     if(uri === 'api/Albums'){
-        document.getElementById("1").innerText = "album"
-        document.getElementById("2").innerText = "artist"
-        document.getElementById("3").innerText = "releasedate"
+        document.getElementById("1").innerText = "Album"
+        document.getElementById("2").innerText = "Artist"
+        document.getElementById("3").innerText = "Release date"
     }
     
     console.log(data)
@@ -234,17 +244,23 @@ function _displayItems(data) {
         let textNode2 = document.createTextNode(item.country);
         td2.appendChild(textNode2);
         let td3 = tr.insertCell(2);
-        let textNode3 = document.createTextNode(item.birthdate);
-        td3.appendChild(textNode3);
         
+        let strippedDate =  new Date(item.debutdate.replace(/,?\s+/g, '-'));
+        let textNode3 = document.createTextNode("" + strippedDate.getFullYear() + "-" + (strippedDate.getMonth()+1)+ "-" +strippedDate.getDate());
+        
+        td3.appendChild(textNode3);
         }
+        
         else if(uri === 'api/Albums'){
 
         let td2 = tr.insertCell(1);
         let textNode2 = document.createTextNode(item.artistName);
         td2.appendChild(textNode2);
         let td3 = tr.insertCell(2);
-        let textNode3 = document.createTextNode(item.releaseDate);
+
+            let strippedDate =  new Date(item.releaseDate.replace(/,?\s+/g, '-'));
+            let textNode3 = document.createTextNode("" + strippedDate.getFullYear() + "-" + (strippedDate.getMonth()+1)+ "-" +strippedDate.getDate());
+   
         td3.appendChild(textNode3);
 
         }
@@ -258,5 +274,5 @@ function _displayItems(data) {
         td5.appendChild(deleteButton);
     });
 
-    todos = data;
+    rows = data;
 }
