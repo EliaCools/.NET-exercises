@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
 
-namespace Todoapi.Controllers
+namespace MusicApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -78,6 +78,11 @@ namespace Todoapi.Controllers
         public async Task<ActionResult<Album>> PostAlbum(Album album)
         {
             _context.Albums.Add(album);
+            if (!ArtistExists(album.ArtistName))
+                {
+                    return NotFound();
+                }
+
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetAlbum", new { id = album.Id }, album);
@@ -103,5 +108,14 @@ namespace Todoapi.Controllers
         {
             return _context.Albums.Any(e => e.Id == id);
         }
+        
+        private bool ArtistExists(string artistName)
+        {
+                          
+            return  _context.Artists.Any(e => e.Name == artistName);
+                    
+        }
     }
+    
+ 
 }

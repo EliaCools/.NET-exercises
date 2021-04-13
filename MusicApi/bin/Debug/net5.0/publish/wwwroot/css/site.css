@@ -1,0 +1,58 @@
+
+input[type='submit'], button, [aria-label] {
+    cursor: pointer;
+}
+
+#editForm {
+    display: none;
+}
+
+.hide{
+    display:none;
+}
+
+table {
+    font-family: Arial, sans-serif;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #f8f8f8;
+    padding: 5px;
+}
+
+body{
+    margin:0 auto;
+    padding:20px 100px 0 100px;
+}
+
+td {
+    border: 1px solid;
+    padding: 5px;
+}
+
+.button{
+    background-color:cadetblue;
+    height:50px;
+    width:100px;
+    border-radius:10px;
+    text-align:center;
+    
+    
+    box-sizing:border-box;
+    display: inline-block;
+}
+
+#add-artist-name{
+    display: none;
+}
+#edit-artist-name{
+    display: none;
+}
+
+#edit-country{
+    display: none;
+}
+
+
